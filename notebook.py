@@ -19,7 +19,7 @@ def author():
 
 
 def about():
-    showinfo('版权信息.Copyright', '本软件版权归属为梁薛鹏')
+    showinfo('版权信息.Copyright', '本软件可自由使用')
 
 
 def get():
