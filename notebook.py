@@ -170,7 +170,7 @@ poss = []  # 找到的关键词位置列表
 position = 0
 
 # search 功能开始
-def search(event):  # 没有找到让新窗口获得焦点的方法..
+def search(x=150,y=0):  # 没有找到让新窗口获得焦点的方法..
     def tag_end(a=0):
         # 计算tag的结束位置
         end = '%s+%sc' % (poss[position + a], str(len(keyword)))
@@ -236,8 +236,8 @@ def search(event):  # 没有找到让新窗口获得焦点的方法..
 
     topsearch = Toplevel(root)
     # topsearch.protocol('WM_DELETE_WINDOW', search_clear)
-    m_x = str(event.x_root - 150)
-    m_y = str(event.y_root + 25)
+    m_x = str(x - 150)
+    m_y = str(y + 25)
     zuobiao = '300x30+' + m_x + '+' + m_y
     topsearch.geometry(zuobiao)
     label1 = Label(topsearch, text='查找内容:')
@@ -314,7 +314,7 @@ shortButton = Button(toolbar, text='|', command='', bg='light sea green')
 shortButton.pack(side=LEFT, padx=10, pady=5)
 
 shortButton = Button(toolbar, text='查找')
-shortButton.bind('<Button-1>', lambda event: search(event))
+shortButton.bind('<Button-1>', lambda event: search(event.x_root,event.y_root))
 shortButton.pack(side=LEFT, padx=5, pady=5)
 shortButton = Button(toolbar, text='全选', command=selectAll)
 shortButton.pack(side=LEFT, padx=5, pady=5)
