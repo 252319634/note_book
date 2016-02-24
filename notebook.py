@@ -15,11 +15,11 @@ filecontent = ''  # 文件起始内容
 
 
 def author():
-    showinfo('作者信息', '本软件由麦子学院Sundy完成')
+    showinfo('作者信息', '本软件由梁薛鹏完成')
 
 
 def about():
-    showinfo('版权信息.Copyright', '本软件版权归属为麦子学院')
+    showinfo('版权信息.Copyright', '本软件版权归属为梁薛鹏')
 
 
 def get():
